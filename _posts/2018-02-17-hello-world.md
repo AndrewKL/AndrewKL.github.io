@@ -3,7 +3,7 @@ layout: post
 title:  "Hello World!"
 date:   2018-02-17
 excerpt: "This blog is built using jekyll with the Massively Theme!"
-image: "/images/pic02.jpg"
+image: "/images/jekyll/octojekyll.png"
 ---
 
 ## About this blog
