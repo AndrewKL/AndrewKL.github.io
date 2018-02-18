@@ -3647,6 +3647,10 @@
 			padding: 0;
 		}
 
+			#main > section > p > img { /* prevent images from over flowing the page */
+				max-width: 100%;
+			}
+
 			#main > .posts > * {
 				-moz-flex-shrink: 1;
 				-webkit-flex-shrink: 1;
