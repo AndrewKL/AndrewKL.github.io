@@ -1,5 +1,5 @@
 # Site
-title:              Andrew Long
+title:              "Andrew Long"
 bio:                'I am a software developer and chemist'
 description:        "I am a software developer and chemist"
 locale:             en_US
@@ -35,11 +35,11 @@ sass:
 disqus_shortname:   default
 
 # Social
-analytics-id:       "default"
+analytics-id:       "UA-49714711-1"
 twitter:            default
 facebook:           default
 instagram:          default
-github:             default
+github:             AndrewKL
 
 # personal
 location:           "Seattle, Wa"
