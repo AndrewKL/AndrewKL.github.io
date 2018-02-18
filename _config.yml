@@ -32,7 +32,7 @@ sass:
   style:            compressed
 
 # Comments
-disqus_shortname:   default
+disqus_shortname:   "andrewklong"
 
 # Social
 analytics-id:       "UA-49714711-1"
