@@ -1,6 +1,12 @@
 ---
 layout: page
-title: About
-permalink: /about/
+title: About me
+description: About me
+sitemap:
+    priority: 0.7
+    lastmod: 2018-02-17
+    changefreq: weekly
 ---
-I am a software developer and chemist living in Seattle.  I've worked on computational chemistry, distributed financial data processing systems.  I also enjoy acrobatics.
+## About me
+
+I'm a software developer and chemist from Seattle Washington.
