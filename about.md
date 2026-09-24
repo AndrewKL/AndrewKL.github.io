@@ -2,12 +2,18 @@
 layout: page
 title: About me
 description: Andrew Long — Senior Staff Engineer at Coupang, previously a decade at Amazon and AWS building large-scale data systems. Chemist by training.
+image: "/images/about/andrew-long.jpg"
 sitemap:
     priority: 0.7
     lastmod: 2026-09-24
     changefreq: weekly
 ---
 ## About me
+
+<span class="image left">
+  <img src="{{ "/images/about/andrew-long.jpg" | absolute_url }}"
+       alt="Andrew Long on a beach, in a straw hat and a pale linen shirt, with a companion beside him under a sunny sky." />
+</span>
 
 I'm Andrew, and I've always been an engineer at heart. I have a background in
 chemistry, but software became my career. I'm a Senior Staff Engineer at
