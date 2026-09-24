@@ -2,4 +2,9 @@
   <li class="{% if page.url == "/" %} active {% endif %}"><a href="{{ "/" | absolute_url }}">Home</a></li>
   <li class="{% if page.url contains '/about/' %} active {% endif %}"><a href="{{ "/about/" | absolute_url }}">About</a></li>
   <li class="{% if page.url contains '/blog/' %} active {% endif %}"><a href="{{ "/blog/" | absolute_url }}">Blog</a></li>
+  {% comment %}
+    Served from the ArianaLinearAProject repository, not built by this site, so
+    it has no page.url to match on and never takes the active class.
+  {% endcomment %}
+  <li><a href="{{ "/ArianaLinearAProject/" | absolute_url }}">Linear A</a></li>
 </ul>

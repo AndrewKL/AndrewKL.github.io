@@ -1,14 +1,14 @@
 ---
 layout: null
-title: Andrew Long - Home Page
-description: My personal blog.
+title: Andrew Long
+description: Software developer and chemist in Seattle. Side projects, writing, and a database of the Linear A corpus.
 sitemap:
     priority: 1.0
     lastmod: 2017-11-02
     changefreq: weekly
 ---
 <!DOCTYPE HTML>
-<html>
+<html lang="en">
 	<head>
     {% include head.html %}
 	</head>
@@ -50,28 +50,37 @@ sitemap:
 			<!--<header class="major">-->
 			<!--<h2><a href="#">Massively is a versatile Jekyll theme</a></h2>-->
 			<!--</article>-->
+			<!-- Featured Project -->
+			<article class="post featured">
+				<header class="major">
+					<span class="date">Ongoing</span>
+					<h2><a href="{{ "/ArianaLinearAProject/" | absolute_url }}">The Ariana Project</a></h2>
+					<p>The Linear A corpus, and what people have claimed it says</p>
+				</header>
+				<p>Linear A is the script of Minoan Crete, c. 1800&ndash;1450 BC, and it is
+				undeciphered. About 1,400 inscriptions survive. This is a queryable database
+				of all of them: every inscribed face, its transliteration, and the competing
+				proposals for what it means &mdash; each proposal recording who made it and
+				how confident the claim is. The readings are proposals, not translations.</p>
+				<ul class="actions special">
+					<li><a href="{{ "/ArianaLinearAProject/" | absolute_url }}" class="button large">Browse the corpus</a></li>
+				</ul>
+			</article>
+
 			<!-- Posts -->
 			<section class="posts">
 			{% for post in site.posts limit:3 %}
-			{% assign mod3 = forloop.index | modulo: 3 %}
 				<article>
 					<header>
 						<span class="date">{{ post.date | date_to_string }}</span>
-						<h2><a href="{{ post.url | absolute_url }}">{{ post.title }}</h2>
+						<h2><a href="{{ post.url | absolute_url }}">{{ post.title }}</a></h2>
 					</header>
-					<a href="{{ post.url | absolute_url }}" class="image fit"><img src="{{ post.image | absolute_url }}" alt="" /></a>
+					{% if post.image %}<a href="{{ post.url | absolute_url }}" class="image fit"><img src="{{ post.image | absolute_url }}" alt="" /></a>{% endif %}
 					<p>{{ post.excerpt }}</p>
 					<ul class="actions">
 						<li><a href="{{ post.url | absolute_url }}" class="button">Full Story</a></li>
 					</ul>
 				</article>
-			{% if mod3 == 0 %}
-				<article>
-					<header>
-						<h2><a href="#">Sponsored</h2>
-					</header>
-				</article>
-			{% endif %}
 			{% endfor %}
 
 			</section>

@@ -4,6 +4,27 @@
       <h3>Location</h3>
       <p>{{site.location}}</p>
     </section>
+    <section>
+      <h3>Elsewhere</h3>
+      {% comment %}
+        One section, not one per link: .split.contact gives every child section
+        its own row with the h3 pinned in a 6rem gutter, so a section each
+        would stack them under separate headings. The icons belong on one row.
+        rel="me" marks these as identity links rather than citations.
+      {% endcomment %}
+      <ul class="icons alt">
+        <li>
+          <a href="https://github.com/{{ site.github }}" class="icon fa-github" rel="me noopener">
+            <span class="label">{{ site.github }} on GitHub</span>
+          </a>
+        </li>
+        <li>
+          <a href="https://www.linkedin.com/in/{{ site.linkedin }}/" class="icon fa-linkedin" rel="me noopener">
+            <span class="label">Andrew Long on LinkedIn</span>
+          </a>
+        </li>
+      </ul>
+    </section>
   </section>
 </footer>
 <!-- Copyright -->

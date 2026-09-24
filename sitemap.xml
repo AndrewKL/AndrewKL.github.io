@@ -16,6 +16,12 @@ layout: null
     </url>
   {% endfor %}
   {% for page in site.pages %}
+    {% comment %}
+      site.pages includes the machine files the plugins emit — robots.txt,
+      feed.xml, and this sitemap itself. A sitemap lists pages to index, not
+      the files beside them, so skip anything that is not a page.
+    {% endcomment %}
+    {% unless page.url contains '.xml' or page.url contains '.txt' or page.url contains '.json' or page.sitemap.exclude %}
     <url>
       <loc>{{ site.url }}{{ page.url }}</loc>
       {% if page.sitemap.lastmod == null %} <lastmod>2017-11-10T00:20:35+00:00</lastmod>
@@ -28,5 +34,19 @@ layout: null
       {% else %} <priority>{{ page.sitemap.priority }}</priority>
       {% endif %}
      </url>
+    {% endunless %}
   {% endfor %}
+  {% comment %}
+    The Ariana Project is built and deployed from a separate repository,
+    AndrewKL/ArianaLinearAProject, and served under this domain because the
+    CNAME here claims it. Jekyll cannot see those pages, so nothing on this
+    site declared the project at all. List its entry point by hand; when that
+    build starts publishing its own sitemap, point robots.txt at that as well.
+  {% endcomment %}
+    <url>
+      <loc>{{ site.url }}/ArianaLinearAProject/</loc>
+      <lastmod>2026-09-24T00:00:00+00:00</lastmod>
+      <changefreq>weekly</changefreq>
+      <priority>0.9</priority>
+    </url>
 </urlset>
