@@ -18,10 +18,16 @@ layout: null
   {% for page in site.pages %}
     {% comment %}
       site.pages includes the machine files the plugins emit — robots.txt,
-      feed.xml, and this sitemap itself. A sitemap lists pages to index, not
-      the files beside them, so skip anything that is not a page.
+      feed.xml, this sitemap, and the stylesheet GitHub Pages injects from its
+      default theme, which does not exist in a local build. A sitemap lists
+      pages to index, not the files beside them, so allow only URLs that end
+      in a slash or .html rather than blacklisting extensions one at a time.
     {% endcomment %}
-    {% unless page.url contains '.xml' or page.url contains '.txt' or page.url contains '.json' or page.sitemap.exclude %}
+    {% assign is_page = false %}
+    {% if page.url == '/' or page.url contains '.html' %}{% assign is_page = true %}{% endif %}
+    {% assign last_char = page.url | slice: -1 %}
+    {% if last_char == '/' %}{% assign is_page = true %}{% endif %}
+    {% unless is_page == false or page.sitemap.exclude %}
     <url>
       <loc>{{ site.url }}{{ page.url }}</loc>
       {% if page.sitemap.lastmod == null %} <lastmod>2017-11-10T00:20:35+00:00</lastmod>
