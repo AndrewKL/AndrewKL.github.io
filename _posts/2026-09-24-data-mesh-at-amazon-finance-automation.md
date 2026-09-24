@@ -3,6 +3,8 @@ layout: post
 title:  "A data mesh for Amazon's finance data"
 date:   2026-09-24
 excerpt: "I co-wrote a post on the AWS Big Data Blog about the data mesh we built at Amazon Finance Automation, where I was the lead developer."
+image: "/images/data-mesh/architecture.jpg"
+image_alt: "Architecture diagram of the data mesh. Two producer accounts, each holding raw and curated data behind a producer catalog, copy metadata into a central data catalog services account that holds the global data catalog and Lake Formation. Permissions flow back out through per-consumer AWS RAM shares to consumer accounts, where Athena, Redshift Spectrum and EMR query the data."
 ---
 
 I co-wrote a post on the AWS Big Data Blog with Nitin Arora, Kumar Satyen
@@ -36,5 +38,7 @@ queries the data with Redshift Spectrum, Athena, EMR or QuickSight.
 It currently hosts around 850 discoverable datasets and more than 300 curated
 data products.
 
-The post has the architecture diagrams and the details on the catalog sync,
-which is the part that took the most care.
+The diagram above is the shape of it: metadata copies inward in blue,
+permissions flow outward in red, and no bulk data moves between the accounts
+at all. The post has the rest of the diagrams and the details on the catalog
+sync, which is the part that took the most care.
