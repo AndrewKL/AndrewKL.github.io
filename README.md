@@ -81,6 +81,9 @@ from a different repository.
 **`_config.yml` still uses the `gems:` key**, renamed to `plugins:` in Jekyll
 3.5. It works, with a deprecation warning on every build.
 
-**The analytics are dead.** `analytics-id: "UA-49714711-1"` is a Universal
-Analytics property. UA stopped processing data in July 2023, so
-`_includes/tracking.html` loads gtag on every page and records nothing.
+**Analytics.** `analytics-id` in `_config.yml` holds a Google Analytics 4
+measurement ID, rendered by `_includes/tracking.html`, which every layout
+includes. It replaced a Universal Analytics property that had recorded nothing
+since UA stopped processing data in July 2023. GA4 sets cookies, so visitors
+in jurisdictions that require consent for analytics cookies are not covered by
+anything on this site today.

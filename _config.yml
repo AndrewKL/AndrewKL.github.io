@@ -39,11 +39,10 @@ sass:
 disqus_shortname:   "andrewklong"
 
 # Social
-# UA properties stopped processing data in July 2023, so _includes/tracking.html
-# currently loads gtag on every page and records nothing. Left in place: whether
-# to move to GA4, switch to something cookieless, or drop analytics entirely is
-# a decision, not a cleanup.
-analytics-id:       "UA-49714711-1"
+# Google Analytics 4 measurement ID, rendered by _includes/tracking.html, which
+# every layout includes. Replaces UA-49714711-1: Universal Analytics properties
+# stopped processing data in July 2023, so the old tag recorded nothing.
+analytics-id:       "G-6W9SMS5BQ0"
 github:             AndrewKL
 
 # personal
