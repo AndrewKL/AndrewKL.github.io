@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "JackSolver: Hartree-Fock in Java"
-date:   2012-12-10
+date:   2014-06-01
 excerpt: "A restricted Hartree-Fock solver written in Java, ported from the Fortran IV listing in the back of Szabo and Ostlund."
 ---
 
