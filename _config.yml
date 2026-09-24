@@ -4,7 +4,11 @@ bio:                'I am a software developer and chemist'
 description:        "I am a software developer and chemist"
 locale:             en_US
 baseurl: "" # the subpath of your site, e.g. /blog
-url: "" # the base hostname & protocol for your site
+# The canonical origin. This has to be set: sitemap.xml builds every <loc>
+# from it, and jekyll-sitemap builds the Sitemap: line of the generated
+# robots.txt from it. Both require absolute URLs, so an empty url silently
+# produced a sitemap and a robots.txt that crawlers ignore.
+url: "https://www.andrewklong.com" # the base hostname & protocol for your site
 
 defaults:
 - scope:
