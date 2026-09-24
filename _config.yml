@@ -39,10 +39,11 @@ sass:
 disqus_shortname:   "andrewklong"
 
 # Social
+# UA properties stopped processing data in July 2023, so _includes/tracking.html
+# currently loads gtag on every page and records nothing. Left in place: whether
+# to move to GA4, switch to something cookieless, or drop analytics entirely is
+# a decision, not a cleanup.
 analytics-id:       "UA-49714711-1"
-twitter:            default
-facebook:           default
-instagram:          default
 github:             AndrewKL
 
 # personal
@@ -50,8 +51,8 @@ location:           "Seattle, Wa"
 # phone:              310-318-5555
 # email:              info@default.com
 
-# Gems
-gems:
+# Plugins. Renamed from `gems` in Jekyll 3.5; the old key warns on every build.
+plugins:
   - jekyll-mentions
   - jekyll-sitemap
   - jekyll-feed

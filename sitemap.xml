@@ -21,7 +21,7 @@ layout: null
       feed.xml, and this sitemap itself. A sitemap lists pages to index, not
       the files beside them, so skip anything that is not a page.
     {% endcomment %}
-    {% unless page.url contains '.xml' or page.url contains '.txt' or page.url contains '.json' %}
+    {% unless page.url contains '.xml' or page.url contains '.txt' or page.url contains '.json' or page.sitemap.exclude %}
     <url>
       <loc>{{ site.url }}{{ page.url }}</loc>
       {% if page.sitemap.lastmod == null %} <lastmod>2017-11-10T00:20:35+00:00</lastmod>
