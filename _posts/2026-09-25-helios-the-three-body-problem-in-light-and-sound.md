@@ -5,6 +5,10 @@ date:   2026-09-25
 excerpt: "A gravity sandbox where every body glows, pulses and hums, and the closer two bodies get, the faster they pulse and wub. Why three bodies have no general solution, why they fly apart, and what happens when you turn a physics problem into something you can see and hear."
 ---
 
+<ul class="actions special">
+  <li><a href="/Helios3BodyProblemVisualizer/" class="button large">Launch Helios</a></li>
+</ul>
+
 [Helios](/Helios3BodyProblemVisualizer/) is a gravity sandbox that runs in the
 browser. Click anywhere a few times to drop some bodies, press Play, and watch
 them pull on each other. Every body is a glowing sphere that pulses and
@@ -109,3 +113,7 @@ GitHub:
 [AndrewKL/Helios3BodyProblemVisualizer](https://github.com/AndrewKL/Helios3BodyProblemVisualizer).
 It is TypeScript and three.js, with the Web Audio API for the sound and no
 other libraries. Turn your sound on, click a handful of times, and press Play.
+
+<ul class="actions special">
+  <li><a href="/Helios3BodyProblemVisualizer/" class="button large">Launch Helios</a></li>
+</ul>
