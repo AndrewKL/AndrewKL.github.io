@@ -27,11 +27,18 @@ layout: null
     {% if page.url == '/' or page.url contains '.html' %}{% assign is_page = true %}{% endif %}
     {% assign last_char = page.url | slice: -1 %}
     {% if last_char == '/' %}{% assign is_page = true %}{% endif %}
+    {% comment %}
+      The home page and the blog index list posts, so they change whenever a
+      post is published. A hand-written lastmod on them went stale for years;
+      take the newest post's date instead.
+    {% endcomment %}
+    {% assign page_lastmod = page.sitemap.lastmod %}
+    {% if page.url == '/' or page.url contains '/blog/' %}{% assign page_lastmod = site.posts.first.date %}{% endif %}
     {% unless is_page == false or page.sitemap.exclude %}
     <url>
       <loc>{{ site.url }}{{ page.url }}</loc>
-      {% if page.sitemap.lastmod == null %} <lastmod>2017-11-10T00:20:35+00:00</lastmod>
-      {% else %} <lastmod>{{ page.sitemap.lastmod | date_to_xmlschema }}</lastmod>
+      {% if page_lastmod == null %} <lastmod>2017-11-10T00:20:35+00:00</lastmod>
+      {% else %} <lastmod>{{ page_lastmod | date_to_xmlschema }}</lastmod>
       {% endif %}
       {% if page.sitemap.changefreq == null %} <changefreq>weekly</changefreq>
       {% else %} <changefreq>{{ page.sitemap.changefreq }}</changefreq>
@@ -43,16 +50,29 @@ layout: null
     {% endunless %}
   {% endfor %}
   {% comment %}
-    The Ariana Project is built and deployed from a separate repository,
-    AndrewKL/ArianaLinearAProject, and served under this domain because the
-    CNAME here claims it. Jekyll cannot see those pages, so nothing on this
-    site declared the project at all. List its entry point by hand; when that
-    build starts publishing its own sitemap, point robots.txt at that as well.
+    The Ariana Project, Helios and the water simulator are each built and
+    deployed from their own repository (AndrewKL/ArianaLinearAProject,
+    AndrewKL/Helios3BodyProblemVisualizer, AndrewKL/NavierStokesSimulation)
+    and served under this domain because the CNAME here claims it. Jekyll
+    cannot see those pages, so list their entry points by hand; when one of
+    those builds starts publishing its own sitemap, point robots.txt at it.
   {% endcomment %}
     <url>
       <loc>{{ site.url }}/ArianaLinearAProject/</loc>
       <lastmod>2026-09-24T00:00:00+00:00</lastmod>
       <changefreq>weekly</changefreq>
       <priority>0.9</priority>
+    </url>
+    <url>
+      <loc>{{ site.url }}/Helios3BodyProblemVisualizer/</loc>
+      <lastmod>2026-09-25T00:00:00+00:00</lastmod>
+      <changefreq>monthly</changefreq>
+      <priority>0.8</priority>
+    </url>
+    <url>
+      <loc>{{ site.url }}/NavierStokesSimulation/</loc>
+      <lastmod>2026-09-25T00:00:00+00:00</lastmod>
+      <changefreq>monthly</changefreq>
+      <priority>0.8</priority>
     </url>
 </urlset>

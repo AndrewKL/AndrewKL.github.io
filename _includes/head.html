@@ -27,6 +27,27 @@
 <meta name="twitter:description" content="{{ meta_description | escape }}">
 <meta name="twitter:image" content="{{ meta_image }}">
 
+{% if page.layout == 'post' %}
+<!-- Structured data, so search results can show the post as an article. -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": {{ meta_title | jsonify }},
+  "description": {{ meta_description | jsonify }},
+  "image": {{ meta_image | jsonify }},
+  "datePublished": {{ page.date | date_to_xmlschema | jsonify }},
+  "dateModified": {{ page.lastmod | default: page.date | date_to_xmlschema | jsonify }},
+  "author": {
+    "@type": "Person",
+    "name": {{ site.title | jsonify }},
+    "url": {{ "/about/" | absolute_url | jsonify }}
+  },
+  "mainEntityOfPage": {{ page.url | absolute_url | jsonify }}
+}
+</script>
+{% endif %}
+
 <!-- jekyll-feed generates /feed.xml; without this nothing points at it. -->
 {% feed_meta %}
 
