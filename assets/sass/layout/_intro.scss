@@ -29,6 +29,25 @@
 			line-height: 1;
 		}
 
+		// The home page title sits on a Radmap render of azulene. A translucent
+		// black panel keeps the white type readable over its light patches.
+		background-image: url('../../images/radmap/radmap-azulene-BW.jpg');
+		background-size: cover;
+		background-position: center;
+		background-repeat: no-repeat;
+
+		.intro-title {
+			background: rgba(0, 0, 0, 0.6);
+			border-radius: 4px;
+			padding: 2rem 3rem 1rem 3rem;
+			margin-bottom: 2rem;
+			max-width: 100%;
+
+			@include breakpoint(xsmall) {
+				padding: 1.5rem 1rem 0.5rem 1rem;
+			}
+		}
+
 		p {
 			font-size: 1.25rem;
 			font-style: italic;
