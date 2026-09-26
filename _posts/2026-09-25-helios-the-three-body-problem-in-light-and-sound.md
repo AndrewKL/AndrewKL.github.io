@@ -3,6 +3,8 @@ layout: post
 title:  "Helios: the three-body problem in light and sound"
 date:   2026-09-25
 excerpt: "A gravity sandbox where every body glows, pulses and hums, and the closer two bodies get, the faster they pulse and wub. Why three bodies have no general solution, why they fly apart, and what happens when you turn a physics problem into something you can see and hear."
+image: "/images/helios/close-encounter.jpg"
+image_alt: "Helios mid-simulation: five glowing bodies (cyan, magenta, lime, amber and violet) on a dark starfield, each trailing a thin line of its path. Two bodies on the right are in a close encounter, stretched toward each other and blazing white where their glows merge. The Pause, Reset, Info and Mute controls sit at the bottom."
 ---
 
 <ul class="actions special">
