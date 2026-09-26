@@ -9,6 +9,7 @@ image_alt: "Helios mid-simulation: five glowing bodies (cyan, magenta, lime, amb
 
 <ul class="actions special">
   <li><a href="/Helios3BodyProblemVisualizer/" class="button large">Launch Helios</a></li>
+  <li><a href="https://github.com/AndrewKL/Helios3BodyProblemVisualizer" class="button large">View the code on GitHub</a></li>
 </ul>
 
 [Helios](/Helios3BodyProblemVisualizer/) is a gravity sandbox that runs in the
@@ -118,4 +119,5 @@ other libraries. Turn your sound on, click a handful of times, and press Play.
 
 <ul class="actions special">
   <li><a href="/Helios3BodyProblemVisualizer/" class="button large">Launch Helios</a></li>
+  <li><a href="https://github.com/AndrewKL/Helios3BodyProblemVisualizer" class="button large">View the code on GitHub</a></li>
 </ul>
